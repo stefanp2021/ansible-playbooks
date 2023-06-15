@@ -1,0 +1,15 @@
+- name: Update and Upgrade Ubuntu Servers
+  hosts: ubuntu_servers
+  become: yes
+
+  tasks:
+    - name: Update package cache
+      apt:
+        update_cache: yes
+      register: apt_update
+
+    - name: Upgrade packages
+      apt:
+        upgrade: dist
+        update_cache: yes
+      when: apt_update.changed
