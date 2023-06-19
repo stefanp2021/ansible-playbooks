@@ -1,4 +1,4 @@
-- name: Update_Upgrade_Ubuntu_Servers
+- name: Update and Upgrade Ubuntu Servers
   hosts: ubuntu_servers
   become: yes
 
